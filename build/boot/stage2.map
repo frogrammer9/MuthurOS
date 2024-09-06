@@ -1,0 +1,90 @@
+Open Watcom Linker Version 2.0 beta Sep  5 2024 02:06:55 (64-bit)
+Copyright (c) 2002-2024 The Open Watcom Contributors. All Rights Reserved.
+Portions Copyright (c) 1985-2002 Sybase, Inc. All Rights Reserved.
+Created on:       24/09/06 18:29:26
+Executable Image: /home/oskar/Dev/MuthurOS/build/boot/boots2.bin
+creating a RAW Binary Image executable
+
+
+                        +------------+
+                        |   Groups   |
+                        +------------+
+
+Group                           Address              Size
+=====                           =======              ====
+
+DGROUP                          00000608             0000005c
+
+
+
+                        +--------------+
+                        |   Segments   |
+                        +--------------+
+
+Segment                Class          Group          Address         Size
+=======                =====          =====          =======         ====
+
+_ENTRY                 CODE           AUTO           00000000        00000012
+_TEXT                  CODE           AUTO           00000012        000005f5
+CONST                  DATA           DGROUP         00000608        0000005b
+CONST2                 DATA           DGROUP         00000664        00000000
+_DATA                  DATA           DGROUP         00000664        00000000
+
+
+                        +----------------+
+                        |   Memory Map   |
+                        +----------------+
+
+* = unreferenced symbol
++ = symbol only referenced locally
+
+Address        Symbol
+=======        ======
+
+Module: /home/oskar/Dev/MuthurOS/build/boot/s2/c/main.obj(/home/oskar/Dev/MuthurOS/src/boot/boots2/main.c)
+00000012       _cstart_
+Module: /home/oskar/Dev/MuthurOS/build/boot/s2/c/stdio.obj(/home/oskar/Dev/MuthurOS/src/boot/boots2/stdio.c)
+0000002b+      putn_
+000002ec+      putc_
+00000313+      puts_
+0000034e       _printf
+Module: /home/oskar/Dev/MuthurOS/build/boot/s2/s/main.obj(main.s)
+00000000       entry
+Module: /home/oskar/Dev/MuthurOS/build/boot/s2/s/x86.obj(x86.s)
+000005c6       _x86_write_char_teletype
+000005d9       _x86_div_64_32
+
+
+                        +---------------------+
+                        |   Module Segments   |
+                        +---------------------+
+
+! = 32-bit segment
+c = initialized communal data
+
+Module          Segment               Class           Address         Size
+======          =======               =====           =======         ====
+
+/home/oskar/Dev/MuthurOS/src/boot/boots2/main.c
+                _TEXT                 CODE           00000012         00000019
+                CONST                 DATA           00000608         0000001c
+                CONST2                DATA           00000664         00000000
+                _DATA                 DATA           00000664         00000000
+/home/oskar/Dev/MuthurOS/src/boot/boots2/stdio.c
+                _TEXT                 CODE           0000002b         0000059b
+                CONST                 DATA           00000624         0000003f
+                CONST2                DATA           00000664         00000000
+                _DATA                 DATA           00000664         00000000
+main.s          _ENTRY                CODE           00000000         00000012
+x86.s           _TEXT                 CODE           000005c6         00000041
+Warning! W1014: stack segment not found
+
+
+                        +-----------------------+
+                        |   Linker Statistics   |
+                        +-----------------------+
+
+Stack size:  0200 (512.)
+Memory size:  0664 (1636.)
+Entry point address: 00000000
+Link time: 00:00.87
